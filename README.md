@@ -11,6 +11,8 @@ It should open in a browser; if not the URL is [http://localhost:1234](http://lo
 
 You will also see any lint errors in the console; check for additional runtime errors in the browser debugger (usually opened with the F12 key).
 
+The "babel" packages under devDependencies in package.json are automatically added the first time I ran `npm start` because React needs them, so I left them in. If you delete them then npm will just add them back in.
+
 ### Deployment
 To deploy, first run the build command: `npm run build`
 
