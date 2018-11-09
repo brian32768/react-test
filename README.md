@@ -1,26 +1,23 @@
-This project was created after reading some blog postings,
-because it uses parcel and that's not in my React books.
+This little React project was created after reading some blog postings,
+it uses Parcel and that's not in my React books so I needed a sample for testing ideas.
 
 ## Available Scripts
 
-In the project directory, you can run:
+### Development
+In the project directory, `npm start`
+will run the app in the development mode.
+The page will reload if you make edits.
+It should open in a browser; if not the URL is [http://localhost:1234](http://localhost:1234)
 
-### `npm start`
+You will also see any lint errors in the console; check for additional runtime errors in the browser debugger (usually opened with the F12 key).
 
-Runs the app in the development mode.<br>
-Open [http://localhost:1234](http://localhost:1234) to view it in the browser.
+### Deployment
+To deploy, first run the build command: `npm run build`
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build
-for the best performance.
+Output will be in the `build` folder. Parcel bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed; copy it to your server.
+Your app is ready to be deployed; copy everything in `build` to your server.
 
 ## Learn More
 
