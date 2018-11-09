@@ -11,7 +11,7 @@ It should open in a browser; if not the URL is [http://localhost:1234](http://lo
 
 You will also see any lint errors in the console; check for additional runtime errors in the browser debugger (usually opened with the F12 key).
 
-The "babel" packages under devDependencies in package.json are automatically added the first time I ran `npm start` because React needs them, so I left them in. If you delete them then npm will just add them back in.
+The first time you run `npm start`, dependencies will be installed locally.
 
 ### Deployment
 To deploy, first run the build command: `npm run build`
@@ -20,6 +20,8 @@ Output will be in the `build` folder. Parcel bundles React in production mode an
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed; copy everything in `build` to your server.
+
+The first time you run `npm run build` it will install cssnano to do the minification.
 
 ## Learn More
 
