@@ -11,6 +11,8 @@ class HelloMessage extends React.Component {
 
 // Mount the component onto the DOM in the div known as "app".
 let mountNode = document.getElementById("app");
-ReactDOM.render(<HelloMessage name="Brian" />, mountNode);
+ReactDOM.render((
+    <HelloMessage name="Brian" />),
+    mountNode);
 
 // That's all!
