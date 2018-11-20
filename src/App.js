@@ -1,18 +1,44 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React, {Component} from 'react';
+import {BrowserRouter, Link, Route, Redirect, Switch} from 'react-router-dom';
 import './App.css';
 
-// Define a new React component.
-class HelloMessage extends React.Component {
-  render() {
-      return <div>Hello, your name is probably not {this.props.name}.</div>;
-  }
+import Home from './home';
+import About from './about';
+import NotFound from './notfound';
+
+class Button extends Component {
+    render() {
+        return (
+            <button><Link to={this.props.url}>{this.props.name}</Link></button>
+        );
+    }
 }
 
-// Mount the component onto the DOM in the div known as "app".
-let mountNode = document.getElementById("app");
-ReactDOM.render((
-    <HelloMessage name="Brian" />),
-    mountNode);
+class PrimaryLayout extends Component {
+    render() {
+        return (
+            <div>
+                <header>
+                    <h1>react-test</h1>
+                    <Button name="home" url="/"/>
+                    <Button name="about" url="/about"/>
+                </header>
+                <main>
+                <Switch>
+                    <Route exact path="/"      component={Home} />
+                    <Route       path="/about" component={About} />
+                    <Route       path="/404"   component={NotFound} />
+                    <Redirect to="/404" />
+                </Switch>
+                </main>
+            </div>
+        );
+    }
+}
 
-// That's all!
+const App = () => (
+    <BrowserRouter><PrimaryLayout/></BrowserRouter>
+)
+
+export default App;
+console.log('App loaded.');
