@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 class TextThing extends Component {
     render() {
         return (
-            <h3>{this.props}</h3>
+            <h3>test</h3>
         );
     }
 }
@@ -18,8 +18,12 @@ class TryMe extends TextThing {
 }
 
 class About extends Component {
+    constructor(props) {
+        super(props);
+        this.props = props;
+    }
     render() {
-        console.log("properties", PropTypes)
+        console.log("properties", this.props)
         return (
             <div id="about">
             <h2>About react-test</h2>
