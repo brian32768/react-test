@@ -6,7 +6,7 @@ class Clock extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            time: "00:00:00"
+            time: "MM/DD/YYYY, 00:00:00"
         }
         this.intervalHandler = this.intervalHandler.bind(this);
         setInterval(this.intervalHandler, 1000);
@@ -14,7 +14,9 @@ class Clock extends Component {
 
     intervalHandler() {
         let d = new Date();
-        this.state.time = d.toLocaleString();
+        this.setState({
+            time: d.toLocaleString()
+        });
     }
 
     render() {
