@@ -5,6 +5,7 @@ import './App.css';
 import Home from './home';
 import About from './about';
 import NotFound from './notfound';
+import Clock from './clock';
 
 class Button extends Component {
     render() {
@@ -19,7 +20,7 @@ class PrimaryLayout extends Component {
         return (
             <div>
                 <header>
-                    <h1>react-test</h1>
+                    <Clock />
                     <Button name="home" url="/"/>
                     <Button name="about" url="/about"/>
                 </header>

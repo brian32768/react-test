@@ -1,5 +1,6 @@
-This little React project was created after reading some blog postings,
-it uses Parcel and that's not in my React books so I needed a sample for testing ideas.
+This little React project was created after reading some blog postings and becoming
+convinced React is a good idea, but I use Parcel and that's not in my React books
+so I needed a sample for testing React ideas with Parcel.
 
 ## Available Scripts
 
@@ -14,7 +15,6 @@ You will also see any lint errors in the console; check for additional runtime e
 The first time you run `npm start`, dependencies will be installed locally.
 
 ### Update git
-
 When I do significant changes I bump the patch version number or possibly the minor version
 
 If the current version in package.json is 0.1.9 then
