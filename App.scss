@@ -1,0 +1,40 @@
+h1 {
+    background-color: violet;
+    font-size: 32pt;
+    font-style:normal;
+    font-family:sans-serif;
+}
+
+.button {
+    font-family: arial;
+    background-color: #000;
+    color: #fff;
+    width: 689px;
+    height: 284px;
+    padding-bottom: 2pt;
+    padding-left: 3pt;
+    padding-right: 3pt;
+    text-decoration: none;
+    margin: 1pt;
+}
+
+#home {
+    font-family: arial;
+    color: rgb(71, 111, 8);
+}
+
+#about {
+    font-family: arial;
+    color: rgb(171, 11, 8);
+}
+
+#clock {
+    background-image: url("/assets/babyturtle.png");
+    width: 689px;
+    height: 284px;
+
+    font-family: arial;
+    color: #fff;
+    font-size: 2em;
+    text-indent: 1em;
+}
