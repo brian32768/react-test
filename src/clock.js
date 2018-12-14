@@ -1,6 +1,7 @@
-import React, {Component} from "react";
-import PropTypes from 'prop-types';
-import ReactDOM from "react-dom";
+import React, {Component} from "react"
+import PropTypes from 'prop-types'
+import ReactDOM from "react-dom"
+import {ChronoContext} from './chrono-context'
 
 class Clock extends Component {
     constructor(props) {
@@ -14,18 +15,22 @@ class Clock extends Component {
 
     intervalHandler() {
         let d = new Date();
-        this.setState({
-            time: d.toLocaleString()
-        });
+        let localeString = d.toLocaleString();
+        this.setState({time: localeString});
+        this.context.onTick(localeString);
     }
 
     render() {
         return (
             <div id="clock">
-            {this.state.time}
             </div>
         );
     }
+}
+Clock.contextType = ChronoContext;
+
+Clock.propTypes = {
+    setTime: PropTypes.func
 }
 
 export default Clock;
