@@ -13,6 +13,14 @@ class Clock extends Component {
         setInterval(this.intervalHandler, 1000);
     }
 
+    // We use a callback function here so that this child object
+    // can pass a new time up to the parents or siblings at the
+    // specified one second interval
+
+    // The use of a context here is just for demonstration.
+    // I could also pass the handle for the parent's handler
+    // in as a prop.
+
     intervalHandler() {
         let d = new Date();
         let localeString = d.toLocaleString();
@@ -22,8 +30,7 @@ class Clock extends Component {
 
     render() {
         return (
-            <div id="clock">
-            </div>
+            <div id="clock"></div>
         );
     }
 }
