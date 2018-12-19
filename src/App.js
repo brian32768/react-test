@@ -1,7 +1,7 @@
 import React, {Component, PureComponent} from 'react'
 import {BrowserRouter, Link, Route, Redirect, Switch} from 'react-router-dom'
 import {ChronoContext} from './chrono-context'
-import Home from './home'
+import {Home} from './home'
 import About from './about'
 import NotFound from './notfound'
 import Clock from './clock'
@@ -32,25 +32,31 @@ class PrimaryLayout extends Component {
     callbackClock(newTime) {
         // Update the time display right here in this parent component
         this.setState({now: newTime})
-        console.log("callbackClock", newTime)
+        //console.log("callbackClock", newTime)
     }
 
     render() {
+        // This works around the need to pass props to About and use Route at the same time!
+        const myAboutRender = () => {
+            return (
+                <About title={this.props.title} />
+            );
+        }
         return (
             <div>
                 <header>
                     <ChronoContext.Provider value={{onTick:this.callbackClock}}>
                     <Clock/>
                     </ChronoContext.Provider>
-                    
-                    <CCButton name="Home"  url="/" />
-                    <CCButton name="About" url="/about" />
+
+                    <CCButton name="home"  url="/" />
+                    <CCButton name="about" url="/about" />
                     <CCButton name={this.state.now} url="/" />
                 </header>
                 <main>
                 <Switch>
                     <Route exact path="/"      component={Home} />
-                    <Route       path="/about" component={About} />
+                    <Route       path="/about" render={myAboutRender} />
                     <Route       path="/404"   component={NotFound} />
                     <Redirect to="/404" />
                 </Switch>
@@ -62,7 +68,7 @@ class PrimaryLayout extends Component {
 PrimaryLayout.contextType = ChronoContext;
 
 const App = () => (
-    <BrowserRouter><PrimaryLayout/></BrowserRouter>
+    <BrowserRouter><PrimaryLayout title="Turtles all the way down"/></BrowserRouter>
 )
 
 export default App;

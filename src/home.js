@@ -1,12 +1,15 @@
-import React, {Component} from "react";
-import ReactDOM from "react-dom";
+import React, {Component} from 'react'
+import ReactDOM from 'react-dom'
 
-const Home = () => (
+// Can't export a const as default, silly rule.
+// but I'm trying to demo the functional declaration of a component,
+// so I am stuck with it.
+
+export const Home = () => (
     <div id="home">
     <h2>Home</h2>
     <p>
-        This is the main page of the react-test app.
+    text goes here
     </p>
     </div>
 )
-export default Home;
