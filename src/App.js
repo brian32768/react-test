@@ -1,7 +1,9 @@
+// App.js react-test
+//
 import React, {Component, PureComponent} from 'react'
 import {BrowserRouter, Link, Route, Redirect, Switch} from 'react-router-dom'
 import {ChronoContext} from './chrono-context'
-import {Home} from './home'
+import Home from './home'
 import About from './about'
 import NotFound from './notfound'
 import Clock from './clock'
