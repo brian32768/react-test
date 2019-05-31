@@ -4,13 +4,21 @@
   "description": "Test of React",
   "main": "index.html",
   "dependencies": {
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-router-dom": "^4.3.1"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^4.3.1",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "cssnano": "^4.1.7",
-    "sass": "^1.15.1"
+    "cssnano": "^4.1.10",
+    "sass": "^1.20.3",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0"
   },
   "scripts": {
     "start": "parcel serve index.html --open",
