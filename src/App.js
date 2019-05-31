@@ -1,26 +1,32 @@
 // App.js react-test
 //
-import React, {Component, PureComponent} from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import {BrowserRouter, Link, Route, Redirect, Switch} from 'react-router-dom'
 import {ChronoContext} from './chrono-context'
 import Home from './home'
 import About from './about'
+import Contact from './Contact'
 import NotFound from './notfound'
 import Clock from './clock'
 
 import '/App.scss'
 
-class CCButton extends Component {
+class CCButton extends React.Component {
+    static propTypes = {
+        name: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired
+    }
     render() {
         return (
-            <span>
+            <>
             <Link to={this.props.url} className="button">{this.props.name}</Link>
-            </span>
+            </>
         );
     }
 }
 
-class PrimaryLayout extends Component {
+class PrimaryLayout extends React.Component {
     constructor() {
         super();
         this.callbackClock = this.callbackClock.bind(this)
@@ -38,30 +44,25 @@ class PrimaryLayout extends Component {
     }
 
     render() {
-        // This works around the need to pass props to About and use Route at the same time!
-        const myAboutRender = () => {
-            return (
-                <About title={this.props.title} />
-            );
-        }
         return (
             <div>
                 <header>
+                <h2>Single page application {this.state.now}</h2>
                     <ChronoContext.Provider value={{onTick:this.callbackClock}}>
                     <Clock/>
                     </ChronoContext.Provider>
-
-                    <CCButton name="home"  url="/" />
-                    <CCButton name="about" url="/about" />
-                    <CCButton name={this.state.now} url="/" />
+                    <CCButton name="home"    url="/" />
+                    <CCButton name="about"   url="/about" />
+                    <CCButton name="contact" url="/contact" />
                 </header>
                 <main>
-                <Switch>
-                    <Route exact path="/"      component={Home} />
-                    <Route       path="/about" render={myAboutRender} />
-                    <Route       path="/404"   component={NotFound} />
-                    <Redirect to="/404" />
-                </Switch>
+                    <Switch> use this choose only one route
+                        <Route exact path="/"        component={ Home } />
+                        <Route       path="/about"   render={props => <About text={this.props.title} {...props}/>} />                        ); }
+                        <Route       path="/contact" component={ Contact } />
+                        <Route       path="/404"     component={ NotFound } />
+                        <Redirect to="/404" />
+                    </Switch>
                 </main>
             </div>
         );

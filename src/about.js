@@ -1,31 +1,35 @@
-import React, {Component} from "react";
-import PropTypes from 'prop-types';
-import ReactDOM from "react-dom";
+import React, {Component} from "react"
+import PropTypes from 'prop-types'
+import ReactDOM from "react-dom"
 
 class TryMe extends Component {
+    static propTypes = {
+        text: PropTypes.string.isRequired
+    };
+
     render() {
         return (
-            <div>
-            <h3>{this.props.title}</h3>
+            <>
+            <h3>{this.props.text}</h3>
             {this.props.children}
-            </div>
+            </>
         )
     }
 }
 
 class About extends Component {
+    static propTypes = {
+        text: PropTypes.string.isRequired
+    };
+
     render() {
         return (
             <div id="about">
             <h2>About react-test</h2>
-            <TryMe title={this.props.title}>This is my 14 day free trial</TryMe>
+            <TryMe text={this.props.text}>This is my 14 day free trial</TryMe>
             </div>
         );
     }
-}
-
-About.propTypes = {
-    title: PropTypes.string.isRequired
 }
 
 export default About;

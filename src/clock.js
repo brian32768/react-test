@@ -1,9 +1,13 @@
-import React, {Component} from "react"
+import React from 'react'
 import PropTypes from 'prop-types'
 import ReactDOM from "react-dom"
 import {ChronoContext} from './chrono-context'
 
-class Clock extends Component {
+class Clock extends React.Component {
+    static propTypes = {
+        setTime: PropTypes.func
+    }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -36,8 +40,5 @@ class Clock extends Component {
 }
 Clock.contextType = ChronoContext;
 
-Clock.propTypes = {
-    setTime: PropTypes.func
-}
 
 export default Clock;
