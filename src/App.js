@@ -15,31 +15,47 @@ import '/App.scss'
 class CCButton extends React.Component {
     static propTypes = {
         name: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired
+        url: PropTypes.string.isRequired,
+        search: PropTypes.string
     }
     render() {
+        console.log("CCButton", this.props.search);
         return (
             <>
-            <Link to={this.props.url} className="button">{this.props.name}</Link>
+            <Link
+                to={{
+                    pathname: this.props.url,
+                    search: this.props.search
+                }}
+                className="button"
+                >
+                    {this.props.name}
+            </Link>
             </>
         );
     }
 }
 
 class PrimaryLayout extends React.Component {
+
+    state = {
+        now: "MM/DD/YYYY, HH:MM:SS ??",
+        aboutId: 0
+    }
+
     constructor() {
         super();
         this.callbackClock = this.callbackClock.bind(this)
-        this.state = {
-            now: "MM/DD/YYYY, HH:MM:SS ??",
-        }
     }
 
     // Demo of children passing data back up to parents via context
 
     callbackClock(newTime) {
         // Update the time display right here in this parent component
-        this.setState({now: newTime})
+        this.setState({
+            now: newTime,
+            aboutId: this.state.aboutId+1
+        })
         //console.log("callbackClock", newTime)
     }
 
@@ -52,13 +68,13 @@ class PrimaryLayout extends React.Component {
                     <Clock/>
                     </ChronoContext.Provider>
                     <CCButton name="home"    url="/" />
-                    <CCButton name="about"   url="/about" />
+                    <CCButton name="about"   url="/about" search={ '?id=' + this.state.aboutId } />
                     <CCButton name="contact" url="/contact" />
                 </header>
                 <main>
                     <Switch> use this choose only one route
                         <Route exact path="/"        component={ Home } />
-                        <Route       path="/about"   render={props => <About text={this.props.title} {...props}/>} />                        ); }
+                        <Route       path="/about/:extras?"   render={props => <About text={this.props.title} {...props}/>} />                        ); }
                         <Route       path="/contact" component={ Contact } />
                         <Route       path="/404"     component={ NotFound } />
                         <Redirect to="/404" />

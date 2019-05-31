@@ -23,6 +23,7 @@ class About extends Component {
     };
 
     render() {
+        console.log("It's about props.", this.props.match.params);
         return (
             <div id="about">
             <h2>About react-test</h2>
