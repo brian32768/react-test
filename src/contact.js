@@ -1,21 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import ReactDOM from 'react-dom'
-import { ContactForm } from './controlled-form'
+import ContactForm from './controlled-form'
 
-class Contact extends React.Component {
-     static propTypes = {
-        title: PropTypes.string
+const Contact = () => {
+    const handleSubmit = (e) => {
+        console.log(e);
     }
-
-    render() {
-        return (
-            <div id="contact">
-                <h2>Contact us using this form.</h2>
-                <ContactForm />
-            </div>
-        );
-    }
+    return (
+        <>
+            <h2>Contact us using this form.</h2>
+            <ContactForm onSubmit={handleSubmit}/>
+        </>
+    );
 }
 
 export default Contact;

@@ -1,29 +1,15 @@
-import React from 'react'
-import uuidv4 from 'uuid/v4'
-//import './todo.css'
+import React, {useState, useEffect} from 'react'
 
-export class ContactForm extends React.Component {
-
-    state = {
-        name: ''
-    }
-
-    onChange = (value) => {
-        console.log("Chhhanged to ", value);
-        this.setState({
-            name: this.state.name + 'a'
-        })
-    }
-
-    render() {
-        return (
-            <div className="contact">
+const ContactForm = (props) => {
+    const [value, setValue] = useState('');
+    return (
+        <>
             We are most happy to serve you.
-            <form>
-            <input type="text" value={ this.state.name } onChange={ this.onChange }/>
-            <input type="submit"/>
+            <form onSubmit={props.onSubmit}>
+                <input type="text" value={value} onChange={(e) => setValue(e.target.value)}/>
+                <input type="submit" />
             </form>
-            </div>
-        );
-    }
+        </>
+    );
 }
+export default ContactForm;

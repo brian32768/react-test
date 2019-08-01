@@ -1,15 +1,15 @@
-import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react'
+import Clock from './clock'
 
 // This shows the component-as-a-function pattern
 
-const Home = () => (
-    <div id="home">
-    <h2>Home</h2>
-    <p>
-    text goes here
-    </p>
-    </div>
-)
-
+const Home = () => {
+    return (
+        <>
+            <h2>Home</h2>
+            <h3><Clock/></h3>
+            <div id="picture"></div>
+        </>
+    )
+}
 export default Home;

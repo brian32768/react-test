@@ -1,3 +1,8 @@
+body {
+    font-family: arial;
+    color: #338;
+}
+
 h1 {
     background-color: violet;
     font-size: 32pt;
@@ -12,10 +17,16 @@ h1 {
     width: 689px;
     height: 284px;
     padding-bottom: 2pt;
-    padding-left: 3pt;
-    padding-right: 3pt;
+    padding-left: 5pt;
+    padding-right: 5pt;
     text-decoration: none;
     margin: 1pt;
+}
+
+.clock {
+    font-family: cursive;
+    font-size: 18pt;
+    margin-top: 5px;
 }
 
 #home {
@@ -28,13 +39,8 @@ h1 {
     color: rgb(171, 11, 8);
 }
 
-#clock {
+#picture {
     background-image: url("/assets/babyturtle.png");
     width: 689px;
     height: 284px;
-
-    font-family: arial;
-    color: #fff;
-    font-size: 2em;
-    text-indent: 1em;
 }
