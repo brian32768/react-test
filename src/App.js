@@ -6,6 +6,7 @@ import {BrowserRouter, Link, Route, Redirect, Switch} from 'react-router-dom'
 import {ChronoContext} from './chrono-context'
 import Home from './home'
 import About from './about'
+import MapPage from './mappage'
 import Contact from './Contact'
 import NotFound from './notfound'
 import Clock from './clock'
@@ -19,7 +20,6 @@ class CCButton extends React.Component {
         search: PropTypes.string
     }
     render() {
-        console.log("CCButton", this.props.search);
         return (
             <>
             <Link
@@ -69,12 +69,14 @@ class PrimaryLayout extends React.Component {
                     </ChronoContext.Provider>
                     <CCButton name="home"    url="/" />
                     <CCButton name="about"   url="/about" search={ '?id=' + this.state.aboutId } />
+                    <CCButton name="map"     url="/map" />
                     <CCButton name="contact" url="/contact" />
                 </header>
                 <main>
                     <Switch> use this choose only one route
                         <Route exact path="/"        component={ Home } />
                         <Route       path="/about/:extras?"   render={props => <About text={this.props.title} {...props}/>} />                        ); }
+                        <Route       path="/map"     component={ MapPage } />
                         <Route       path="/contact" component={ Contact } />
                         <Route       path="/404"     component={ NotFound } />
                         <Redirect to="/404" />
