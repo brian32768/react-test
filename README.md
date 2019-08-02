@@ -1,6 +1,8 @@
-This little React project was created after reading some blog postings and becoming
-convinced React is a good idea, but I use Parcel and that's not in my React books
-so I needed a sample for testing React ideas with Parcel.
+This little React project was created after reading some blog postings and becoming convinced React is a good idea, but I use Parcel and that's not in my React books so I needed a sample for testing React ideas with Parcel.
+
+A few days ago I progressed to publishing modules on npmjs.com,
+so I added a map here to make sure that I could run through the full
+cycle of publishing and consuming @map46/react-simplemap.
 
 ## Available Scripts
 
