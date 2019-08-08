@@ -8,8 +8,11 @@ import About from './about'
 import MapPage from './mappage'
 import Contact from './contact'
 import NotFound from './notfound'
+import configStore from './configstore'
 
 import '/App.scss'
+
+const {store} = configStore();
 
 const CCButton = (props) => {
     return (
@@ -55,6 +58,8 @@ const PrimaryLayout = () => {  // eslint-disable-line no-unused-vars
     )
 }
 const App = () => (
-    <BrowserRouter><PrimaryLayout title="Turtles all the way down"/></BrowserRouter>
+    <Provider store={store}>
+        <BrowserRouter><PrimaryLayout title="Turtles all the way down"/></BrowserRouter>
+    </Provider>
 )
 export default App;
