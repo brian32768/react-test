@@ -1,8 +1,8 @@
 // App.js react-test
 //
-import React from 'react'
+import React from 'react'  // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types'
-import {BrowserRouter, Link, Route, Redirect, Switch} from 'react-router-dom'
+import {BrowserRouter, Link, Route, Redirect, Switch} from 'react-router-dom'  // eslint-disable-line no-unused-vars
 import Home from './home'
 import About from './about'
 import MapPage from './mappage'
@@ -31,7 +31,7 @@ CCButton.propTypes = {
     search: PropTypes.string
 }
 
-const PrimaryLayout = () => {
+const PrimaryLayout = () => {  // eslint-disable-line no-unused-vars
     return (
         <div>
             <header>

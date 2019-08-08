@@ -1,7 +1,6 @@
-import React from "react"
-import PropTypes from 'prop-types'
+import React from "react"  // eslint-disable-line no-unused-vars
 
-const TryMe = (props) => {
+const TryMe = (props) => {  // eslint-disable-line no-unused-vars
     return (
         <>
             <h3>{props.text}</h3>

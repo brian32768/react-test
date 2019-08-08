@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'  // eslint-disable-line no-unused-vars
 
 const ContactForm = (props) => {
     const [value, setValue] = useState('');

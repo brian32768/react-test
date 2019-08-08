@@ -1,5 +1,5 @@
-import React from 'react'
-import Clock from './clock'
+import React from 'react'  // eslint-disable-line no-unused-vars
+import Clock from './clock'  // eslint-disable-line no-unused-vars
 
 // This shows the component-as-a-function pattern
 

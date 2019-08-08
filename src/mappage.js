@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
-import Map, {OpenLayersVersion} from '@map46/react-simplemap'
-import Clock from './clock'
+import React, {useState} from 'react'  // eslint-disable-line no-unused-vars
+import Map, {OpenLayersVersion} from '@map46/react-simplemap'  // eslint-disable-line no-unused-vars
+import Clock from './clock'  // eslint-disable-line no-unused-vars
 
 const MapPage = () => {
-    const [lon, setLon]   = useState(-122);
-    const [lat, setLat]   = useState( 44.5);
-    const [zoom, setZoom] = useState(6);
+    const [lon]   = useState(-122);
+    const [lat]   = useState( 44.5);
+    const [zoom] = useState(6);
 
     return (
         <>

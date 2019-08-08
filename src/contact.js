@@ -1,5 +1,5 @@
-import React from 'react'
-import ContactForm from './controlled-form'
+import React from 'react'  // eslint-disable-line no-unused-vars
+import ContactForm from './controlled-form'  // eslint-disable-line no-unused-vars
 
 const Contact = () => {
     const handleSubmit = (e) => {
