@@ -13,7 +13,7 @@ const App = ({page}) => {
     return (
         <div>
             <header>
-            <h2>Single page application</h2>
+            <h2>react-test</h2>
             <Navbar/>
             </header>
             <main>

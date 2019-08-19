@@ -1,19 +1,26 @@
 import React, {useState} from 'react'  // eslint-disable-line no-unused-vars
-import Map, {OpenLayersVersion} from '@map46/react-simplemap'  // eslint-disable-line no-unused-vars
+import {Map, OpenLayersVersion} from '@map46/react-simplemap'  // eslint-disable-line no-unused-vars
 import Clock from './clock'  // eslint-disable-line no-unused-vars
 
-const Map46 = () => {
-    const [lon]  = useState(-122);
-    const [lat]  = useState( 44.5);
-    const [zoom] = useState(6);
-
+const MapPage = () => {
     return (
         <>
-            <Clock/><br />
-            Eventually, every app I write ends up with a map in it.
-            <h3><OpenLayersVersion/></h3>
-            <Map lon={lon} lat={lat} zoom={zoom} style={{position:'relative',top:0,width:600,height:400,padding:10}}/>
+            <Clock/>
+            <OpenLayersVersion/>
+            <div className="mappage">
+                <div className="row">
+                    <div className="mapnav">
+                        <div className="mapbutton">[1]</div>
+                        <div className="mapbutton">[2]</div>
+                        <div className="mapbutton">[3]</div>
+                    </div>
+                    <Map center={[-122.6, 45.5]} zoom={14} className="simplemap"/>
+                </div>
+                <div className="row overview">
+                    overview map
+                </div>
+            </div>
         </>
     )
 }
-export default Map46;
+export default MapPage;

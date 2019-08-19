@@ -10,23 +10,53 @@ h1 {
     font-family:sans-serif;
 }
 
-.button {
+.mapnav {
+    display: flex;
+    flex-direction: row;
+}
+.mapbutton {
     font-family: arial;
-    background-color: #000;
-    color: #fff;
-    width: 689px;
-    height: 284px;
-    padding-bottom: 2pt;
-    padding-left: 5pt;
-    padding-right: 5pt;
-    text-decoration: none;
-    margin: 1pt;
+    font-weight: bold;
+    background-image: url("/assets/shirtbutton.png");
+    color: #888;
+    width: 64px;
+    height: 64px;
+    margin: 2pt;
+    text-align: center;
+}
+
+a {
+    padding: 3px;
 }
 
 .clock {
     font-family: cursive;
     font-size: 18pt;
     margin-top: 5px;
+}
+
+.mappage {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    background-color: pink;
+}
+.row {
+    border: 2px solid green;
+    background-color: white;
+}
+
+.overview {
+    width: 155px;
+    height: 155px;
+    color: white;
+    background-image: url("/assets/babyturtle.png");
+}
+.simplemap {
+    width: 600px;
+    height: 400px;
+    padding: 2px;
+    background-color: lightblue;
 }
 
 #home {
