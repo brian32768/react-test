@@ -10,12 +10,11 @@ h1 {
     font-family:sans-serif;
 }
 
-.mapnav {
+.nav-section {
     display: flex;
     flex-direction: row;
 }
 .mapbutton {
-    font-family: arial;
     font-weight: bold;
     background-image: url("/assets/shirtbutton.png");
     color: #888;
@@ -35,29 +34,39 @@ a {
     margin-top: 5px;
 }
 
-.mappage {
+.main {
     display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    background-color: pink;
-}
-.row {
-    border: 2px solid green;
-    background-color: white;
+    flex-direction: column;
 }
 
+.map-section {
+    display: flex;
+    flex-direction: row;
+    background-color: darkgreen;
+    flex-grow: 1;
+}
+.simplemap {
+    padding: 2px;
+    flex-grow: 1;
+    align-items: stretch;
+}
 .overview {
     width: 155px;
     height: 155px;
     color: white;
     background-image: url("/assets/babyturtle.png");
 }
-.simplemap {
-    width: 600px;
-    height: 400px;
-    padding: 2px;
-    background-color: lightblue;
+
+.table-section {
+    display: flex;
+    flex-direction: row;
 }
+.flx {
+    border: 2px solid green;
+    background-color: white;
+    flex-grow: 1;
+}
+
 
 #home {
     font-family: arial;
