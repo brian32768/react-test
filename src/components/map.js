@@ -1,44 +1,41 @@
-import React, {useState} from 'react'  // eslint-disable-line no-unused-vars
+import React, {useState, useEffect} from 'react'  // eslint-disable-line no-unused-vars
 import {Map, OpenLayersVersion} from '@map46/react-simplemap'  // eslint-disable-line no-unused-vars
 import Clock from './clock'  // eslint-disable-line no-unused-vars
 import {Container, Row, Col} from 'reactstrap';
 
+
 const MapPage = () => {
+    const minHgt = 400;
+    const [winWid, setwinWid] = useState(window.innerWidth);
+    const [winHgt, setwinHgt] = useState(window.innerHeight);
+    useEffect(() => {
+        const listener = () => {
+            setwinWid(window.innerWidth);
+            setwinHgt(window.innerHeight);
+        }
+        window.addEventListener("resize", listener);
+        return () => {
+            window.removeEventListener("resize", listener);
+        };
+    }, []);
     return (
         <>
             <Clock/>
-            <OpenLayersVersion/>
+            <OpenLayersVersion/><br />
+            width {winWid} x height {winHgt}
 
-            <Container>
-                <Row>
-                    <Col>item 1</Col>
-                    <Col>item 2</Col>
-                    <Col>item 3</Col>
-                </Row>
-            </Container>
-
-            <section className="nav-section">
-                <div className="mapbutton">[1]</div>
-                <div className="mapbutton">[2]</div>
-                <div className="mapbutton">[3]</div>
+            <section className="map-section" style={winHgt>minHgt?{height:winHgt-200}:{}}>
+                <Map center={[-122.6, 45.5]} zoom={14} className="simplemap"/>
+                <div className="overview">
+                    overview map
+                </div>
             </section>
 
-            <section className="main">
-
-                <section className="map-section">
-                    <Map center={[-122.6, 45.5]} zoom={14} className="simplemap"/>
-                    <div className="overview">
-                        overview map
-                    </div>
-                </section>
-
-                <section className="table-section">
-                    <div className="flx f1">item1</div>
-                    <div className="flx f2">item2</div>
-                    <div className="flx f3">item3</div>
-                    <div className="flx f4">item4</div>
-                </section>
-
+            <section className="table-section">
+                <div className="flx f1">item1</div>
+                <div className="flx f2">item2</div>
+                <div className="flx f3">item3</div>
+                <div className="flx f4">item4</div>
             </section>
         </>
     )

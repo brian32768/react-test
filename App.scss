@@ -51,10 +51,11 @@ a {
     align-items: stretch;
 }
 .overview {
-    width: 155px;
+    width: 195px;
     height: 155px;
-    color: white;
+    color: lightgreen;
     background-image: url("/assets/babyturtle.png");
+    background-size: cover;
 }
 
 .table-section {
