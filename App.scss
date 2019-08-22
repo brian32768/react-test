@@ -34,11 +34,6 @@ a {
     margin-top: 5px;
 }
 
-.main {
-    display: flex;
-    flex-direction: column;
-}
-
 .map-section {
     display: flex;
     flex-direction: row;
@@ -67,7 +62,6 @@ a {
     background-color: white;
     flex-grow: 1;
 }
-
 
 #home {
     font-family: arial;

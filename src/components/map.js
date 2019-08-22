@@ -1,13 +1,22 @@
 import React, {useState, useEffect} from 'react'  // eslint-disable-line no-unused-vars
 import {Map, OpenLayersVersion} from '@map46/react-simplemap'  // eslint-disable-line no-unused-vars
 import Clock from './clock'  // eslint-disable-line no-unused-vars
-import {Container, Row, Col} from 'reactstrap';
 
+import {Button} from 'reactstrap'  // eslint-disable-line no-unused-vars
+import PrintButton from './print'  // eslint-disable-line no-unused-vars
+
+const modalStyle = {
+    content: {
+        top: 100, left: 100,
+        width: 200, height: 200,
+    }
+};
 
 const MapPage = () => {
     const minHgt = 400;
     const [winWid, setwinWid] = useState(window.innerWidth);
     const [winHgt, setwinHgt] = useState(window.innerHeight);
+
     useEffect(() => {
         const listener = () => {
             setwinWid(window.innerWidth);
@@ -18,12 +27,13 @@ const MapPage = () => {
             window.removeEventListener("resize", listener);
         };
     }, []);
+
     return (
         <>
             <Clock/>
             <OpenLayersVersion/><br />
             width {winWid} x height {winHgt}
-
+            <PrintButton/>
             <section className="map-section" style={winHgt>minHgt?{height:winHgt-200}:{}}>
                 <Map center={[-122.6, 45.5]} zoom={14} className="simplemap"/>
                 <div className="overview">
