@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'  // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types'
-import {incCounter} from '../actions'
+import {incCounter} from '../actions/counter'
 import {connect} from 'react-redux'
 
 const Counter = ({count, incCounter}) => {

@@ -3,14 +3,7 @@ import {Map, OpenLayersVersion} from '@map46/react-simplemap'  // eslint-disable
 import Clock from './clock'  // eslint-disable-line no-unused-vars
 
 import {Button} from 'reactstrap'  // eslint-disable-line no-unused-vars
-import PrintButton from './print'  // eslint-disable-line no-unused-vars
-
-const modalStyle = {
-    content: {
-        top: 100, left: 100,
-        width: 200, height: 200,
-    }
-};
+import PrintButton from './print/printModal'  // eslint-disable-line no-unused-vars
 
 const MapPage = () => {
     const minHgt = 400;

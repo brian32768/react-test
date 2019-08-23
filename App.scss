@@ -63,6 +63,21 @@ a {
     flex-grow: 1;
 }
 
+.print-modal {
+    display: flex;
+    flex-direction: row;
+    margin: 8px;
+}
+.print-title {
+    flex-grow: 1;
+}
+.print-preview {
+    flex-grow: 1;
+}
+.print-form {
+}
+
+
 #home {
     font-family: arial;
     color: rgb(71, 111, 8);

@@ -5,14 +5,11 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import Navbar from './components/navbar' // eslint-disable-line no-unused-vars
 import '../App.scss'
-import ReactModal from 'react-modal'
 
 import * as components from './components'
 
-ReactModal.setAppElement("#app");
-
 const App = ({page}) => {
-    const Component = components[page];
+    const Component = components[page]; // eslint-disable-line no-unused-vars
     return (
         <div>
             <header>

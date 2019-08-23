@@ -1,6 +1,6 @@
 import logger from 'redux-logger'
 import {createStore, applyMiddleware, combineReducers, compose} from 'redux'
-import {page, counter} from './reducers'
+import {page, counter, print} from './reducers'
 //import { mapMiddleware, errorReporter } from './src/middleware'
 import routes from './routes-map'
 
@@ -9,6 +9,7 @@ function configureStore(preloadedState) {
     const rootReducer = combineReducers({
         page,
         counter,
+        print,
         location : reducer
     })
     const middlewares = applyMiddleware(logger, middleware)
