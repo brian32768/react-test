@@ -53,7 +53,7 @@ const PrintButton = () => {
         const format = DefaultLayouts[template].page
 
         console.log("Printing", title, template, quality, '"' + description + '"', DefaultLayouts[template]);
-        html2canvas(document.querySelector("#app")).then((canvas) => {
+        html2canvas(document.querySelector(".ol-viewport")).then((canvas) => {
 //            document.body.appendChild(canvas)
             const data = canvas.toDataURL('image/png');
             const doc = new jsPDF({
@@ -62,9 +62,9 @@ const PrintButton = () => {
                 format,
                 compress:true
             });
-            doc.text('Hello world', 10,10)
+            doc.text(title, 10,10)
             doc.addImage(data, 'PNG', 10,30)
-            doc.save('jspdf-' + template + '.pdf')
+            doc.save('cc-webmaps-' + template + '.pdf')
         });
         togglePrintModal()
         e.preventDefault();
