@@ -3,7 +3,7 @@ import {Map, OpenLayersVersion} from '@map46/react-simplemap'  // eslint-disable
 import Clock from './clock'  // eslint-disable-line no-unused-vars
 
 import {Button} from 'reactstrap'  // eslint-disable-line no-unused-vars
-import PrintButton from './print/printModal'  // eslint-disable-line no-unused-vars
+//import PrintButton from './print/printModal'  // eslint-disable-line no-unused-vars
 
 const MapPage = () => {
     const minHgt = 400;
@@ -26,7 +26,6 @@ const MapPage = () => {
             <Clock/>
             <OpenLayersVersion/><br />
             width {winWid} x height {winHgt}
-            <PrintButton/>
             <section className="map-section" style={winHgt>minHgt?{height:winHgt-200}:{}}>
                 <Map center={[-122.6, 45.5]} zoom={14} className="simplemap"/>
                 <div className="overview">
