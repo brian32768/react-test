@@ -1,3 +1,4 @@
+import {Button} from 'bootstrap'
 import React from 'react'  // eslint-disable-line no-unused-vars
 import Clock from './clock'  // eslint-disable-line no-unused-vars
 import Counter from './counter'  // eslint-disable-line no-unused-vars
@@ -10,6 +11,7 @@ const Home = () => {
             <h3><Clock/></h3>
             <div id="picture"></div>
             <Counter/>
+            <Button name="Turtle"/>
         </>
     )
 }
