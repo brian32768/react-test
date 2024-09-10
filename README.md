@@ -1,51 +1,50 @@
 # react-test
 
-This little React project was created after reading some blog postings and becoming convinced React is a good idea, 
-but I use Parcel and that's not in my React books so I needed a sample for testing React ideas with Parcel.
+Simple react application that is used to test deployment workflow.
 
-A few days ago I progressed to publishing modules on npmjs.com,
-so I added a map here to make sure that I could run through the full
-cycle of publishing and consuming @map46/react-simplemap.
+## Test
 
-I wanted a way to try out Bootstrap 5 (which is in beta right now)
-so today I updated the project and added it.
+```bash
+npm install
+npm start
+```
 
-## Available Scripts
+## Build
 
-### Development
+Build into the public/ folder. 
 
-In the project directory, `npm start`
-will run the app in the development mode.
-The page will reload if you make edits.
-It should open in a browser; if not the URL is [http://localhost:1234](http://localhost:1234)
+```bash
+npm run build
+```
 
-You will also see any lint errors in the console; check for additional runtime errors in the browser debugger (usually opened with the F12 key).
+Check the output into github, so that you can deploy
+to any server that has a git client and a web server.
 
-The first time you run `npm start`, dependencies will be installed locally.
+```bash
+git push
+```
 
-### Update git
+### Test build
 
-When I do significant changes I bump the patch version number or possibly the minor version
+This command starts a server running on port 3000
+so you can see if the build is working as you expected. Control-C to exit.
 
-If the current version in package.json is 0.1.9 then
-````npm version patch```` would bump the third digit (eg 0.1.10)
-and
-````npm version minor```` would bump the second digit (eg 0.2.0)
-and in either case, it's all pushed up to github.
+```bash
+npm run serve
+```
 
-The command fails if changes are left uncommitted, so 'git commit' first.
+## Deploy
 
-### Deployment
+On the target host, in the folder accessible by your web server,
+clone the project.
 
-To deploy, first run the build command: `npm run build`
+```bash
+git clone https://github.com/brian32768/react-test.git test
+```
 
-Output will be in the `build` folder. Parcel bundles React in production mode and optimizes the build for the best performance.
+It should be visible at https://yourhost/test/public/
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed; copy everything in `build` to your server.
+## To do
 
-The first time you run `npm run build` it will install cssnano to do the minification.
+There are probably lots of packages listed in package.json that could be removed.
 
-## Learn More
-
-To learn React, check out the [React documentation](https://reactjs.org/).

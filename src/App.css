@@ -1,0 +1,33 @@
+
+.table-section {
+    display: flex;
+    flex-direction: row;
+}
+.flx {
+    border: 2px solid green;
+    background-color: white;
+    flex-grow: 1;
+}
+
+.print-modal {
+    display: flex;
+    flex-direction: row;
+    margin: 8px;
+}
+.print-title {
+    flex-grow: 1;
+}
+.print-preview {
+    flex-grow: 1;
+}
+
+#home {
+    font-family: arial;
+    color: rgb(71, 111, 8);
+}
+
+#about {
+    font-family: arial;
+    color: rgb(171, 11, 8);
+}
+
