@@ -48,7 +48,7 @@
   },
   "scripts": {
     "start": "parcel serve index.html",
-    "build": "parcel build index.html --dist-dir . --public-url test/",
+    "build": "parcel build index.html --dist-dir public",
     "serve": "serve public",
     "clean": "rm -rf dist node_modules .parcel-cache"
   },
